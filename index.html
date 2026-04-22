@@ -1,0 +1,683 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Ishika Dubey — Data Scientist</title>
+  <meta name="description" content="Ishika Dubey — MS Data Science @ UNH. ML Engineer, Big Data, NLP."/>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link href="https://fonts.googleapis.com/css2?family=Clash+Display:wght@400;500;600;700&family=Cabinet+Grotesk:wght@300;400;500;700;800&family=JetBrains+Mono:wght@300;400;500&display=swap" rel="stylesheet"/>
+  <!-- Fallback if Clash Display not available via Google -->
+  <link href="https://api.fontshare.com/v2/css?f[]=clash-display@400,500,600,700&f[]=cabinet-grotesk@300,400,500,700,800&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="style.css"/>
+</head>
+<body>
+
+  <!-- Custom Cursor -->
+  <div class="cursor-dot" id="cursorDot"></div>
+  <div class="cursor-ring" id="cursorRing"></div>
+
+  <!-- Noise overlay -->
+  <div class="noise"></div>
+
+  <!-- ══════════════ NAV ══════════════ -->
+  <nav id="nav">
+    <div class="nav-logo">
+      <span class="logo-i">I</span><span class="logo-d">D</span><span class="logo-dot">.</span>
+    </div>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="#about" data-text="About">About</a></li>
+      <li><a href="#skills" data-text="Skills">Skills</a></li>
+      <li><a href="#projects" data-text="Projects">Projects</a></li>
+      <li><a href="#experience" data-text="Experience">Experience</a></li>
+      <li><a href="#contact" data-text="Contact">Contact</a></li>
+    </ul>
+    <a href="assets/Ishika_Dubey_Resume.pdf" download class="nav-resume-btn">
+      <span>Resume</span>
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+    </a>
+    <button class="burger" id="burger">
+      <div class="burger-line"></div>
+      <div class="burger-line"></div>
+    </button>
+  </nav>
+
+  <!-- Mobile menu -->
+  <div class="mobile-nav" id="mobileNav">
+    <a href="#about">About</a>
+    <a href="#skills">Skills</a>
+    <a href="#projects">Projects</a>
+    <a href="#experience">Experience</a>
+    <a href="#contact">Contact</a>
+  </div>
+
+  <!-- ══════════════ HERO ══════════════ -->
+  <section id="hero">
+    <canvas id="particleCanvas"></canvas>
+
+    <div class="hero-orbs">
+      <div class="orb orb-1"></div>
+      <div class="orb orb-2"></div>
+      <div class="orb orb-3"></div>
+    </div>
+
+    <div class="hero-layout">
+      <!-- Left text -->
+      <div class="hero-text">
+        <div class="hero-greeting">
+          <span class="terminal-cursor">▍</span>
+          <span class="greeting-text">Hello, world. I'm</span>
+        </div>
+
+        <h1 class="hero-name">
+          <span class="name-line" data-aos="name">Ishika</span>
+          <span class="name-line name-outline" data-aos="name2">Dubey</span>
+        </h1>
+
+        <div class="hero-roles">
+          <span class="role-prefix">—</span>
+          <div class="roles-slider">
+            <span class="role active">Data Scientist</span>
+            <span class="role">ML Engineer</span>
+            <span class="role">Big Data Specialist</span>
+            <span class="role">NLP Researcher</span>
+          </div>
+        </div>
+
+        <p class="hero-bio">
+          MS Data Science @ University of New Haven · Building intelligent pipelines that transform raw data into real-world decisions — from geospatial AI to distributed systems at scale.
+        </p>
+
+        <div class="hero-cta">
+          <a href="#projects" class="btn-glow">
+            <span>Explore My Work</span>
+            <div class="btn-glow-bg"></div>
+          </a>
+          <div class="hero-socials">
+            <a href="https://linkedin.com/in/ishikadubey-809084207" target="_blank" class="social-icon" aria-label="LinkedIn">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6zM2 9h4v12H2z"/><circle cx="4" cy="4" r="2"/></svg>
+            </a>
+            <a href="https://github.com/ishika17dubey/DS" target="_blank" class="social-icon" aria-label="GitHub">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 00-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0020 4.77 5.07 5.07 0 0019.91 1S18.73.65 16 2.48a13.38 13.38 0 00-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 005 4.77a5.44 5.44 0 00-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 009 18.13V22"/></svg>
+            </a>
+            <a href="mailto:ishikawork2025@gmail.com" class="social-icon" aria-label="Email">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 01-2.06 0L2 7"/></svg>
+            </a>
+          </div>
+        </div>
+
+        <!-- Stats bar -->
+        <div class="hero-stats">
+          <div class="hstat">
+            <span class="hstat-num" data-target="3">0</span><span class="hstat-unit">+</span>
+            <span class="hstat-label">Years XP</span>
+          </div>
+          <div class="hstat-divider"></div>
+          <div class="hstat">
+            <span class="hstat-num" data-target="216">0</span><span class="hstat-unit">K+</span>
+            <span class="hstat-label">Records Analyzed</span>
+          </div>
+          <div class="hstat-divider"></div>
+          <div class="hstat">
+            <span class="hstat-num" data-target="10">0</span><span class="hstat-unit">+</span>
+            <span class="hstat-label">Certifications</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Right: Profile card -->
+      <div class="hero-profile-wrap">
+        <div class="profile-card" id="profileCard">
+          <div class="profile-card-inner">
+            <div class="profile-img-wrap">
+              <!-- REPLACE src with your actual photo path: assets/profile.jpeg -->
+              <div class="profile-img-placeholder" id="profileImgWrap">
+                <img src="profile.jpeg" alt="Ishika Dubey" class="profile-img" id="profileImg" />
+  
+                </div>
+              </div>
+              <div class="profile-ring-1"></div>
+             <div class="profile-ring-2"></div> 
+            </div>
+
+            <div class="profile-info">
+              <h3>Ishika Dubey</h3>
+              <p class="profile-role">Data Scientist · ML Engineer</p>
+              <div class="profile-location">
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                West Haven, CT
+              </div>
+            </div>
+
+            <div class="profile-tags">
+              <span>#MachineLearning</span>
+              <span>#BigData</span>
+              <span>#NLP</span>
+              <span>#AWS</span>
+              <span>#Kafka</span>
+            </div>
+
+            <div class="profile-availability">
+              <div class="avail-dot"></div>
+              Open to roles · May 2026
+            </div>
+
+            <!-- Floating tech badges -->
+            <div class="float-badge badge-python">
+              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" width="20" height="20" alt="Python"/>
+              Python
+            </div>
+            <div class="float-badge badge-tf">
+              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tensorflow/tensorflow-original.svg" width="20" height="20" alt="TensorFlow"/>
+              TensorFlow
+            </div>
+            <div class="float-badge badge-aws">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="#FF9900"><path d="M6.763 10.036c0 .296.032.535.088.71.064.176.144.368.256.576.04.072.056.144.056.208 0 .096-.056.192-.176.288l-.584.392c-.08.056-.16.08-.232.08-.096 0-.192-.048-.288-.136a2.96 2.96 0 01-.344-.448 7.48 7.48 0 01-.296-.56c-.744.88-1.68 1.32-2.8 1.32-.8 0-1.44-.232-1.912-.688-.472-.456-.712-1.064-.712-1.816 0-.8.28-1.448.848-1.936.568-.488 1.32-.736 2.272-.736.312 0 .64.024.984.072.344.048.696.12 1.064.2v-.672c0-.704-.144-1.192-.432-1.472-.288-.28-.784-.416-1.48-.416-.32 0-.648.04-.984.12s-.664.184-.984.32c-.144.064-.256.096-.32.112a.56.56 0 01-.144.024c-.128 0-.192-.096-.192-.288v-.456c0-.144.016-.256.056-.312.04-.056.12-.112.24-.168.32-.168.704-.304 1.152-.408a5.72 5.72 0 011.424-.168c1.08 0 1.872.248 2.376.744.496.496.752 1.248.752 2.256v2.976zm-3.872 1.448c.304 0 .616-.056.944-.168.328-.112.624-.312.872-.592.144-.176.256-.368.312-.584.056-.216.088-.472.088-.776v-.376a7.6 7.6 0 00-.848-.16 6.928 6.928 0 00-.864-.056c-.616 0-1.064.12-1.368.368-.304.248-.448.592-.448 1.04 0 .424.104.744.32.96.208.224.512.344.992.344zm7.264.992c-.16 0-.272-.024-.344-.08-.072-.048-.136-.16-.192-.312L7.1 5.548a1.448 1.448 0 01-.072-.32c0-.128.064-.2.192-.2h.784c.168 0 .28.024.344.08.072.048.128.16.184.312l2.072 8.176 1.928-8.176c.048-.16.104-.264.176-.312.072-.048.192-.08.352-.08h.64c.168 0 .28.024.352.08.072.048.136.16.176.312l1.952 8.272 2.136-8.272c.056-.16.12-.264.184-.312.072-.048.184-.08.344-.08h.744c.128 0 .2.064.2.2 0 .04-.008.08-.016.128a1.2 1.2 0 01-.056.2l-2.992 9.536c-.056.16-.12.264-.192.312-.072.048-.184.08-.344.08h-.688c-.168 0-.28-.024-.352-.08-.072-.056-.136-.16-.176-.32l-1.92-7.984-1.904 7.976c-.048.16-.104.264-.176.32-.072.056-.192.08-.352.08h-.688zm15.872.2c-.504 0-1.008-.064-1.496-.184-.488-.128-.872-.264-1.128-.424-.16-.096-.272-.2-.312-.296a.72.72 0 01-.064-.296v-.472c0-.192.072-.288.208-.288.056 0 .112.008.168.024.056.016.136.056.224.096.304.136.632.24.984.312.36.072.712.112 1.072.112.568 0 1.008-.104 1.312-.304.304-.2.464-.488.464-.864 0-.256-.08-.464-.24-.64-.16-.176-.464-.336-.904-.488l-1.296-.408c-.656-.208-1.144-.512-1.456-.912a2.16 2.16 0 01-.472-1.344c0-.384.08-.72.248-1.016.168-.296.392-.552.68-.752.288-.208.616-.36.992-.464.376-.104.776-.152 1.2-.152.208 0 .424.016.632.04.216.024.408.064.6.104.184.048.36.096.528.152.168.056.296.112.392.168.128.072.216.144.264.224.048.072.072.176.072.32v.44c0 .192-.072.296-.208.296a.96.96 0 01-.352-.112 4.256 4.256 0 00-1.752-.352c-.512 0-.912.088-1.184.272-.272.184-.416.456-.416.824 0 .256.088.472.264.648.176.176.504.352.984.512l1.272.408c.648.208 1.12.504 1.408.88.288.376.432.808.432 1.288 0 .392-.08.744-.24 1.056-.168.312-.4.584-.704.8-.304.224-.664.384-1.08.496-.432.12-.896.176-1.392.176z"/></svg>
+              AWS
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="scroll-cue">
+      <div class="scroll-mouse">
+        <div class="scroll-wheel"></div>
+      </div>
+      <span>scroll to explore</span>
+    </div>
+  </section>
+
+  <!-- ══════════════ ABOUT ══════════════ -->
+  <section id="about" class="section-about">
+    <div class="container">
+      <div class="section-eyebrow">
+        <span class="eyebrow-line"></span>
+        <span>About Me</span>
+      </div>
+
+      <div class="about-layout">
+        <div class="about-left reveal">
+          <h2 class="section-heading">I turn messy <em>data</em> into<br/>clear <em>decisions</em>.</h2>
+          <p>I'm a Data Science graduate student at the University of New Haven, with a background in Computer Applications from New Delhi. My work lives at the intersection of machine learning, distributed systems, and measurable impact.</p>
+          <p>Before grad school, I spent two years at Holistic Learning in New Delhi — using data analytics to improve academic outcomes and training educators to integrate AI into classrooms. I believe great data scientists communicate as fluently as they code.</p>
+          <p>Right now, I'm building a geospatial ML pipeline at UNH to predict archaeological looting risk using satellite and raster data — where data science meets real-world heritage preservation.</p>
+
+          <div class="about-chips">
+            <span>🧠 Machine Learning</span>
+            <span>☁️ AWS Cloud</span>
+            <span>📊 Data Pipelines</span>
+            <span>🗣️ NLP</span>
+            <span>🌍 Geospatial AI</span>
+            <span>📡 Kafka Streaming</span>
+          </div>
+        </div>
+
+        <div class="about-right reveal delay-2">
+          <div class="about-info-cards">
+            <div class="info-card tilt-card">
+              <div class="info-card-icon">🎓</div>
+              <div>
+                <div class="info-card-title">Currently</div>
+                <div class="info-card-body">MS Data Science<br/>University of New Haven</div>
+              </div>
+            </div>
+            <div class="info-card tilt-card">
+              <div class="info-card-icon">📍</div>
+              <div>
+                <div class="info-card-title">Location</div>
+                <div class="info-card-body">West Haven, CT<br/>Open to remote & hybrid</div>
+              </div>
+            </div>
+            <div class="info-card tilt-card">
+              <div class="info-card-icon">🚀</div>
+              <div>
+                <div class="info-card-title">Seeking</div>
+                <div class="info-card-body">Data Science · ML Engineer<br/>Available May 2026</div>
+              </div>
+            </div>
+            <div class="info-card tilt-card">
+              <div class="info-card-icon">🌐</div>
+              <div>
+                <div class="info-card-title">Languages</div>
+                <div class="info-card-body">English (Proficient)<br/>Hindi (Native)</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════════ SKILLS ══════════════ -->
+  <section id="skills" class="section-skills">
+    <div class="container">
+      <div class="section-eyebrow">
+        <span class="eyebrow-line"></span>
+        <span>Technical Skills</span>
+      </div>
+      <h2 class="section-heading reveal">My Arsenal</h2>
+
+      <!-- Skill bars -->
+      <div class="skills-layout">
+        <div class="skill-bars reveal delay-1">
+          <h3 class="skills-subhead">Proficiency</h3>
+
+          <div class="skill-bar-item">
+            <div class="skill-bar-header">
+              <span>Python</span><span class="skill-pct">92%</span>
+            </div>
+            <div class="skill-bar-track">
+              <div class="skill-bar-fill" data-width="92"></div>
+            </div>
+          </div>
+
+          <div class="skill-bar-item">
+            <div class="skill-bar-header">
+              <span>SQL</span><span class="skill-pct">85%</span>
+            </div>
+            <div class="skill-bar-track">
+              <div class="skill-bar-fill" data-width="85"></div>
+            </div>
+          </div>
+
+          <div class="skill-bar-item">
+            <div class="skill-bar-header">
+              <span>Machine Learning</span><span class="skill-pct">88%</span>
+            </div>
+            <div class="skill-bar-track">
+              <div class="skill-bar-fill" data-width="88"></div>
+            </div>
+          </div>
+
+          <div class="skill-bar-item">
+            <div class="skill-bar-header">
+              <span>AWS / Cloud</span><span class="skill-pct">80%</span>
+            </div>
+            <div class="skill-bar-track">
+              <div class="skill-bar-fill" data-width="80"></div>
+            </div>
+          </div>
+
+          <div class="skill-bar-item">
+            <div class="skill-bar-header">
+              <span>Big Data (Kafka, Spark)</span><span class="skill-pct">78%</span>
+            </div>
+            <div class="skill-bar-track">
+              <div class="skill-bar-fill" data-width="78"></div>
+            </div>
+          </div>
+
+          <div class="skill-bar-item">
+            <div class="skill-bar-header">
+              <span>Power BI / Visualization</span><span class="skill-pct">82%</span>
+            </div>
+            <div class="skill-bar-track">
+              <div class="skill-bar-fill" data-width="82"></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Tech grid -->
+        <div class="tech-grid reveal delay-2">
+          <h3 class="skills-subhead">Tech Stack</h3>
+          <div class="tech-pills-grid">
+            <div class="tech-pill">
+              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" width="22" height="22" alt="Python"/>
+              Python
+            </div>
+            <div class="tech-pill">
+              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tensorflow/tensorflow-original.svg" width="22" height="22" alt="TensorFlow"/>
+              TensorFlow
+            </div>
+            <div class="tech-pill">
+              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/apachekafka/apachekafka-original.svg" width="22" height="22" alt="Kafka"/>
+              Kafka
+            </div>
+            <div class="tech-pill">
+              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-original.svg" width="22" height="22" alt="Docker"/>
+              Docker
+            </div>
+            <div class="tech-pill">
+              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg" width="22" height="22" alt="Git"/>
+              Git
+            </div>
+            <div class="tech-pill">
+              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/jupyter/jupyter-original.svg" width="22" height="22" alt="Jupyter"/>
+              Jupyter
+            </div>
+            <div class="tech-pill">
+              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" width="22" height="22" alt="JavaScript"/>
+              JavaScript
+            </div>
+            <div class="tech-pill">
+              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/hadoop/hadoop-original.svg" width="22" height="22" alt="Hadoop"/>
+              Hadoop
+            </div>
+            <div class="tech-pill">
+              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/azure/azure-original.svg" width="22" height="22" alt="Azure"/>
+              Azure
+            </div>
+            <div class="tech-pill">
+              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/numpy/numpy-original.svg" width="22" height="22" alt="NumPy"/>
+              NumPy
+            </div>
+            <div class="tech-pill">
+              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/pandas/pandas-original.svg" width="22" height="22" alt="Pandas"/>
+              Pandas
+            </div>
+            <div class="tech-pill">
+              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg" width="22" height="22" alt="SQL"/>
+              SQL
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════════ PROJECTS ══════════════ -->
+  <section id="projects" class="section-projects">
+    <div class="container">
+      <div class="section-eyebrow">
+        <span class="eyebrow-line"></span>
+        <span>Projects</span>
+      </div>
+      <h2 class="section-heading reveal">Featured Work</h2>
+
+      <!-- Hero project -->
+      <div class="project-hero tilt-card reveal delay-1">
+        <div class="project-hero-content">
+          <div class="project-badge">⭐ Featured · Big Data · NLP</div>
+          <h3>Real-Time Sentiment Analysis Pipeline</h3>
+          <p>Production-grade distributed data pipeline ingesting social media streams using Apache Kafka, routing through AWS Glue for ETL, storing in partitioned S3, queried via Athena, and visualized live in Power BI dashboards.</p>
+          <ul class="impact-list">
+            <li>~60% reduction in SQL query latency via S3 partitioning</li>
+            <li>Zero-touch automated ETL: ingest → transform → visualize</li>
+            <li>Containerized with Docker for fault-tolerant production deployment</li>
+          </ul>
+          <div class="project-tech-row">
+            <span>Kafka</span><span>AWS S3</span><span>Glue</span><span>Athena</span><span>Power BI</span><span>Docker</span>
+          </div>
+          <div class="project-links-row">
+            <a href="https://github.com/ishika17dubey/DS" target="_blank" class="proj-btn">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 00-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0020 4.77 5.07 5.07 0 0019.91 1S18.73.65 16 2.48a13.38 13.38 0 00-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 005 4.77a5.44 5.44 0 00-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 009 18.13V22"/></svg>
+              View on GitHub
+            </a>
+          </div>
+        </div>
+        <div class="project-hero-visual">
+          <div class="arch-diagram">
+            <div class="arch-node node-source">📡 Twitter Stream</div>
+            <div class="arch-arrow">↓</div>
+            <div class="arch-node node-kafka">⚡ Kafka + Zookeeper</div>
+            <div class="arch-arrow">↓</div>
+            <div class="arch-node node-glue">🔄 AWS Glue ETL</div>
+            <div class="arch-arrow">↓</div>
+            <div class="arch-node node-s3">🗄️ S3 Partitioned</div>
+            <div class="arch-arrow">↓</div>
+            <div class="arch-node node-athena">🔍 Athena SQL</div>
+            <div class="arch-arrow">↓</div>
+            <div class="arch-node node-bi">📊 Power BI Dashboard</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Project cards -->
+      <div class="project-cards-grid">
+
+        <div class="pcard tilt-card reveal delay-1">
+          <div class="pcard-header">
+            <div class="pcard-num">01</div>
+            <div class="pcard-badge">Research · ML</div>
+          </div>
+          <h3>ML Fish Abundance Estimation</h3>
+          <p>Benchmarked Random Forest, XGBoost, Gradient Boosting & Naïve Bayes on FISHGLOB — 216,000+ trawl hauls across 18 countries. Achieved 79% accuracy with ensemble methods; findings support marine conservation strategy.</p>
+          <div class="pcard-tech">
+            <span>XGBoost</span><span>Scikit-learn</span><span>Python</span><span>Pandas</span>
+          </div>
+          <a href="https://github.com/ishika17dubey/DS" target="_blank" class="pcard-link">GitHub →</a>
+        </div>
+
+        <div class="pcard tilt-card reveal delay-2">
+          <div class="pcard-header">
+            <div class="pcard-num">02</div>
+            <div class="pcard-badge">AI Search</div>
+          </div>
+          <h3>8-Puzzle AI Search Solver</h3>
+          <p>Implemented BFS, DFS, UCS, and A* algorithms in Python to solve the 8-puzzle problem. Benchmarked heuristic vs uninformed search on nodes explored, time complexity, and solution optimality — A* outperformed all others by 3×.</p>
+          <div class="pcard-tech">
+            <span>A* Search</span><span>BFS/DFS</span><span>Python</span>
+          </div>
+          <a href="https://github.com/ishika17dubey/DS" target="_blank" class="pcard-link">GitHub →</a>
+        </div>
+
+        <div class="pcard tilt-card reveal delay-3">
+          <div class="pcard-header">
+            <div class="pcard-num">03</div>
+            <div class="pcard-badge">🟢 Active Research</div>
+          </div>
+          <h3>Archaeological Risk Mapping</h3>
+          <p>Building a Python-based geospatial ML pipeline that processes temporal satellite and raster layers to predict archaeological looting risk — supporting UNESCO-level heritage conservation decisions in real time.</p>
+          <div class="pcard-tech">
+            <span>Geospatial ML</span><span>Raster Data</span><span>Python</span>
+          </div>
+          <a href="#contact" class="pcard-link">In Progress — Contact Me →</a>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════════ EXPERIENCE ══════════════ -->
+  <section id="experience" class="section-exp">
+    <div class="container">
+      <div class="section-eyebrow">
+        <span class="eyebrow-line"></span>
+        <span>Experience</span>
+      </div>
+      <h2 class="section-heading reveal">Career Journey</h2>
+
+      <div class="exp-timeline">
+
+        <div class="exp-item reveal delay-1">
+          <div class="exp-dot"></div>
+          <div class="exp-meta">
+            <span class="exp-date">Dec 2025 – May 2026</span>
+            <span class="exp-type">Internship</span>
+          </div>
+          <div class="exp-card tilt-card">
+            <div class="exp-card-top">
+              <div>
+                <h3>Risk Mapping Intern</h3>
+                <div class="exp-org">University of New Haven · West Haven, CT</div>
+              </div>
+              <div class="exp-logo">🏛️</div>
+            </div>
+            <ul class="exp-bullets">
+              <li>Architecting a geospatial ML pipeline using Python to predict archaeological looting risk from temporal satellite data</li>
+              <li>Automated data ingestion and preprocessing pipelines, reducing manual prep time for model iterations</li>
+              <li>Presenting research insights in bi-weekly faculty meetings; translating ML outputs into conservation-actionable findings</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="exp-item reveal delay-2">
+          <div class="exp-dot"></div>
+          <div class="exp-meta">
+            <span class="exp-date">Aug 2023 – Jul 2024</span>
+            <span class="exp-type">AI Trainer</span>
+          </div>
+          <div class="exp-card tilt-card">
+            <div class="exp-card-top">
+              <div>
+                <h3>AI Trainer & Data Analyst</h3>
+                <div class="exp-org">Holistic Learning · New Delhi, India</div>
+              </div>
+              <div class="exp-logo">🤖</div>
+            </div>
+            <ul class="exp-bullets">
+              <li>Used performance data analytics to identify learning gaps and design targeted interventions — measurably improving student outcomes</li>
+              <li>Led professional development workshops for 20+ educators on AI integration in classrooms</li>
+              <li>Built data-driven instructional frameworks using trend analysis, optimizing curriculum delivery</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="exp-item reveal delay-3">
+          <div class="exp-dot"></div>
+          <div class="exp-meta">
+            <span class="exp-date">Apr 2021 – Jul 2023</span>
+            <span class="exp-type">Teaching</span>
+          </div>
+          <div class="exp-card tilt-card">
+            <div class="exp-card-top">
+              <div>
+                <h3>CS Tutor & Cyber Safety Facilitator</h3>
+                <div class="exp-org">Holistic Learning + Excellence Learning · New Delhi</div>
+              </div>
+              <div class="exp-logo">💻</div>
+            </div>
+            <ul class="exp-bullets">
+              <li>Tutored students in Python, data structures, and algorithms with personalized coding exercises</li>
+              <li>Designed and delivered cybersecurity awareness workshops for school-aged learners (digital safety, data privacy)</li>
+              <li>Created age-appropriate curriculum using hands-on simulations and real-life case studies</li>
+            </ul>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════════ EDUCATION ══════════════ -->
+  <section id="education" class="section-edu">
+    <div class="container">
+      <div class="section-eyebrow">
+        <span class="eyebrow-line"></span>
+        <span>Education</span>
+      </div>
+      <h2 class="section-heading reveal">Academic Background</h2>
+
+      <div class="edu-cards">
+        <div class="edu-card tilt-card reveal delay-1">
+          <div class="edu-card-glow"></div>
+          <div class="edu-year-badge">2024 – 2026</div>
+          <div class="edu-degree">M.S. Data Science</div>
+          <div class="edu-uni">University of New Haven</div>
+          <div class="edu-location">Tagliatela College of Engineering · West Haven, CT</div>
+          <div class="edu-tags">
+            <span>Machine Learning</span><span>Big Data</span><span>Deep Learning</span>
+            <span>NLP</span><span>Data Ethics</span><span>Data Visualization</span>
+          </div>
+        </div>
+
+        <div class="edu-card tilt-card reveal delay-2">
+          <div class="edu-card-glow edu-glow-2"></div>
+          <div class="edu-year-badge">2020 – 2023</div>
+          <div class="edu-degree">B.S. Computer Applications</div>
+          <div class="edu-uni">GGSIPU</div>
+          <div class="edu-location">Guru Gobind Singh Indraprastha University · New Delhi, India</div>
+          <div class="edu-tags">
+            <span>AI</span><span>Data Mining</span><span>DBMS</span>
+            <span>Software Engineering</span><span>OOP</span><span>Computer Networks</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════════ CERTIFICATIONS ══════════════ -->
+  <section id="certifications" class="section-certs">
+    <div class="container">
+      <div class="section-eyebrow">
+        <span class="eyebrow-line"></span>
+        <span>Certifications</span>
+      </div>
+      <h2 class="section-heading reveal">Always Learning</h2>
+
+      <div class="certs-marquee-wrap reveal">
+        <div class="certs-marquee">
+          <div class="certs-track">
+            <div class="cert-chip"><span class="cert-platform li">LI</span>Generative AI for Business Leaders · 2025</div>
+            <div class="cert-chip"><span class="cert-platform li">LI</span>Technical Product Management · 2025</div>
+            <div class="cert-chip"><span class="cert-platform li">LI</span>Azure Spark Databricks · 2025</div>
+            <div class="cert-chip"><span class="cert-platform li">LI</span>Apache Spark Big Data Engineering · 2025</div>
+            <div class="cert-chip"><span class="cert-platform li">LI</span>Python: REST & Web Data · 2025</div>
+            <div class="cert-chip"><span class="cert-platform li">LI</span>Learning SQL Programming · 2025</div>
+            <div class="cert-chip"><span class="cert-platform li">LI</span>Data Science Foundations · 2025</div>
+            <div class="cert-chip"><span class="cert-platform cy">CY</span>Intro to IT & Cybersecurity · 2021</div>
+            <div class="cert-chip"><span class="cert-platform sk">SK</span>Django Using Python · 2022</div>
+            <!-- Duplicate for infinite loop -->
+            <div class="cert-chip"><span class="cert-platform li">LI</span>Generative AI for Business Leaders · 2025</div>
+            <div class="cert-chip"><span class="cert-platform li">LI</span>Technical Product Management · 2025</div>
+            <div class="cert-chip"><span class="cert-platform li">LI</span>Azure Spark Databricks · 2025</div>
+            <div class="cert-chip"><span class="cert-platform li">LI</span>Apache Spark Big Data Engineering · 2025</div>
+            <div class="cert-chip"><span class="cert-platform li">LI</span>Python: REST & Web Data · 2025</div>
+            <div class="cert-chip"><span class="cert-platform li">LI</span>Learning SQL Programming · 2025</div>
+            <div class="cert-chip"><span class="cert-platform li">LI</span>Data Science Foundations · 2025</div>
+            <div class="cert-chip"><span class="cert-platform cy">CY</span>Intro to IT & Cybersecurity · 2021</div>
+            <div class="cert-chip"><span class="cert-platform sk">SK</span>Django Using Python · 2022</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════════ CONTACT ══════════════ -->
+  <section id="contact" class="section-contact">
+    <div class="container">
+      <div class="contact-glow-orb"></div>
+      <div class="contact-content reveal">
+        <div class="section-eyebrow" style="justify-content:center">
+          <span class="eyebrow-line"></span><span>Get In Touch</span><span class="eyebrow-line"></span>
+        </div>
+        <h2 class="contact-heading">Let's Build Something<br/><em>Together</em></h2>
+        <p class="contact-sub">I'm actively seeking Data Science and ML Engineer roles starting May 2026. If you're building something exciting with data — I want to hear about it.</p>
+
+        <div class="contact-cards">
+          <a href="mailto:ishikawork2025@gmail.com" class="contact-card tilt-card">
+            <div class="cc-icon">📧</div>
+            <div class="cc-label">Email</div>
+            <div class="cc-value">ishikawork2025@gmail.com</div>
+          </a>
+          <a href="https://linkedin.com/in/ishikadubey-809084207" target="_blank" class="contact-card tilt-card">
+            <div class="cc-icon">💼</div>
+            <div class="cc-label">LinkedIn</div>
+            <div class="cc-value">ishikadubey-809084207</div>
+          </a>
+          <a href="https://github.com/ishika17dubey/DS" target="_blank" class="contact-card tilt-card">
+            <div class="cc-icon">⚡</div>
+            <div class="cc-label">GitHub</div>
+            <div class="cc-value">ishika17dubey/DS</div>
+          </a>
+          <a href="tel:+14752279133" class="contact-card tilt-card">
+            <div class="cc-icon">📱</div>
+            <div class="cc-label">Phone</div>
+            <div class="cc-value">(475) 227-9133</div>
+          </a>
+        </div>
+
+        <a href="assets/Ishika_Dubey_Resume.pdf" download class="btn-glow btn-glow-large">
+          <span>Download Full Resume</span>
+          <div class="btn-glow-bg"></div>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="footer-inner">
+      <span>© 2026 Ishika Dubey</span>
+      <span class="footer-dot">·</span>
+      <span>Designed with intention</span>
+      <span class="footer-dot">·</span>
+      <span>West Haven, CT</span>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
